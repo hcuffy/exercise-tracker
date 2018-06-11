@@ -1,0 +1,15 @@
+.email-data {
+  width: 300px;
+}
+
+body {
+  margin-left: 50px;
+}
+
+label {
+  background-color: #42cef4;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+}
