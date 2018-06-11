@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/hcuffy/exercise-tracker/issues"
   },
-  "homepage": "https://github.com/hcuffy/exercise-tracker#readme"
+  "homepage": "https://github.com/hcuffy/exercise-tracker#readme",
+  "dependencies": {
+    "crypto-random-string": "^1.0.0"
+  }
 }
