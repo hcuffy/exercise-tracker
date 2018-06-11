@@ -10,13 +10,28 @@
 <body>
 <h1>Exercise Tracker</h1>
 
-<div class="login">
-<label>POST /api/exercise/new-user</label>
-<form action="/api/exercise/new-user" method="post">
-<input  name="username" class="form-control email-data" type="text" placeholder="Enter a username" required>
-<button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<div class="all-forms">
 
-</div>
+    <div class="login">
+      <h4>Create a New User</h4>
+    <label>POST /api/exercise/new-user</label>
+    <form action="/api/exercise/new-user" method="post">
+    <input  name="username" class="form-control email-data" type="text" placeholder="Enter a username" required>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+   <div>
+<hr>
+    <div class="add-Form">
+      <h4>Add exercises</h4>
+    <label>POST /api/exercise/add</label>
+    <form action="/api/exercise/add" method="post">
+    <input  name="userId" class="form-control add-data" type="text" placeholder="userId*" required>
+    <input  name="description" class="form-control add-data" type="text" placeholder="description*" required>
+    <input  name="duration" class="form-control add-data" type="text" placeholder="duration(in Minutes)" required>
+    <input  name="date" class="form-control add-data" type="text" placeholder="Date" required>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+<div>
 </body>
 </html>

@@ -13,3 +13,8 @@ label {
 button[type="submit"] {
   margin-top: 10px;
 }
+
+.add-data {
+  width: 300px;
+  margin-bottom: 5px;
+}
