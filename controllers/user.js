@@ -51,16 +51,61 @@ exports.addExercise = (req, res, next) => {
 
 exports.getLog = (req, res, next) => {
 
-var { userId, fromDate, toDate, limit } = req.query;
+var userId = req.query.userId;
+var limit = parseInt(req.query.limit);
+var fromDate = Date.parse(req.query.fromDate);
+var toDate = Date.parse(req.query.toDate);
 
-fromDate = Date.parse(fromDate);
-toDate = Date.parse(toDate);
 
 Exercise.find({}, (err, data) => {
-    if (err)
-      return next(err)
+  if (err)
+    return next(err)
 
-    res.send({fromDate});
+    if(!Number.isInteger(fromDate) && !Number.isInteger(toDate) && !Number.isInteger(limit)){
+      res.send(data);
+    }
+    else if(!Number.isInteger(fromDate) && !Number.isInteger(toDate) && Number.isInteger(limit)){
+let dataLen = data.length;
+      if(limit >= data.length){
+        res.send(data);
+      }else{
+      data.splice(limit);
+      res.send(data);
+    }
+    }else{
+
+     let results = [];
+
+     data.forEach((log) => {
+
+     let logDate = Date.parse(log.date);
+      console.log(logDate +" "+fromDate+" "+toDate);
+     if(logDate > fromDate && logDate < toDate){
+          console.log("this one");
+       results.push(log);
+     }else if(logDate > fromDate && !Number.isInteger(toDate)){
+         console.log("this two");
+       results.push(log);
+     }else if(logDate < toDate && !Number.isInteger(fromDate)){
+         console.log("this three");
+       results.push(log);
+     }
+     });
+
+     if(Number.isInteger(limit)){
+       let dataLen = data.length;
+             if(limit >= data.length){
+               res.send(results);
+             }else{
+             data.splice(limit);
+             res.send(results);
+           }
+     }else{
+       res.send(results);
+     }
+
+    }
+
   })
 
 
