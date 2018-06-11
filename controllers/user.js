@@ -25,25 +25,26 @@ const { username } = req.body;
 }
 
 exports.addExercise = (req, res, next) => {
-  const { userId } = req.body;
-console.log("I got here");
+  const { userId, description, duration, date } = req.body;
+
     User.findOne({ userId }, (err, user) => {
         if (err)
             return next(err);
+        if (!user) {
+          res.send("No Such User Exists.")
+        }
         if (user) {
-              res.send(user)
+          console.log("I am here");
+        const newExercise = new Exercise({ description: description, duration: duration, userId: userId, date: date })
+        newExercise.save(err => {
+          if (err)
+            return next(err)
+        })
+
+              res.send(user._id)
         }
 
 
 });
 
 }
-
-
-//   const newUser = new User({username, description: '', duration: 0, userId: genId, date:'' })
-//   newUser.save(err => {
-//     if (err)
-//       return next(err)
-//   })
-//  res.send({Username : username, _id : genId})
-// });
