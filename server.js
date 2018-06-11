@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/voting');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/exercise');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
