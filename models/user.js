@@ -4,11 +4,7 @@ const Schema = mongoose.Schema
 const UserSchema = new Schema({
 
  username: String,
- description: String,
- duration: Number,
- userId: String,
- date: String
-
+ userId: String
 
 }, { timestamps: true });
 
