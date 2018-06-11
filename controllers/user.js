@@ -40,11 +40,29 @@ exports.addExercise = (req, res, next) => {
           if (err)
             return next(err)
         })
-
-              res.send(user._id)
+          res.send({Username:user.username, description:description, duration:duration, userId:userId, date:date})
         }
 
 
 });
+
+}
+
+
+exports.getLog = (req, res, next) => {
+
+var { userId, fromDate, toDate, limit } = req.query;
+
+fromDate = Date.parse(fromDate);
+toDate = Date.parse(toDate);
+
+Exercise.find({}, (err, data) => {
+    if (err)
+      return next(err)
+
+    res.send({fromDate});
+  })
+
+
 
 }

@@ -22,16 +22,31 @@
    <div>
 <hr>
     <div class="add-Form">
-      <h4>Add exercises</h4>
+      <h4>Add exercise</h4>
     <label>POST /api/exercise/add</label>
     <form action="/api/exercise/add" method="post">
     <input  name="userId" class="form-control add-data" type="text" placeholder="userId*" required>
     <input  name="description" class="form-control add-data" type="text" placeholder="description*" required>
-    <input  name="duration" class="form-control add-data" type="number" placeholder="duration(in Minutes)" required>
-    <input  name="date" class="form-control add-data" type="date" placeholder="Date" required>
+    <input  name="duration" class="form-control add-data" type="number" placeholder="duration(in Minutes)">
+    <input  name="date" class="form-control add-data" type="date" placeholder="Date">
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     </div>
+<hr>
+<div class="add-Form">
+  <h4>Get Log of exercises</h4>
+<label>GET /api/exercise/log?{userId}[&from][&to][&limit]</label>
+<label>{ } = required, [ ] = optional</label>
+<label>from, to = dates (yyyy-mm-dd); limit = number</label>
+<form action="/api/exercise/log" method="get">
+<input  name="userId" class="form-control get-data" type="text" placeholder="userId*" required>
+<input  name="fromDate" class="form-control get-data" type="date" placeholder="from">
+<input  name="toDate" class="form-control get-data" type="date" placeholder="to">
+<input  name="limit" class="form-control get-data" type="number" placeholder="Limit">
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
 <div>
 </body>
 </html>

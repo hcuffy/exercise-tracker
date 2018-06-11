@@ -4,6 +4,7 @@ const userController = require('../controllers/user');
 
 router.post("/api/exercise/new-user", userController.addUser);
 router.post("/api/exercise/add", userController.addExercise);
+router.get("/api/exercise/log", userController.getLog);
 router.get('/', (req, res) => {
   res.render('index')
 });
