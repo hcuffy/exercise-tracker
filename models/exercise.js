@@ -3,11 +3,11 @@ const Schema = mongoose.Schema
 
 const ExerciseSchema = new Schema({
 
- username: String,
- description: String,
- duration: Number,
- userId: String,
- date: String
+  username: String,
+  description: String,
+  duration: Number,
+  userId: String,
+  date: String
 
 
 }, { timestamps: true });

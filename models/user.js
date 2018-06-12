@@ -3,8 +3,8 @@ const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
 
- username: String,
- userId: String
+  username: String,
+  userId: String
 
 }, { timestamps: true });
 
