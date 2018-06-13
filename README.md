@@ -2,7 +2,7 @@
 
 Follow this README in order to properly run this application.
 
-Live App: 
+Live App: https://quilt-advantage.glitch.me/
 
 ## Prerequisites for Local Installation.
 
