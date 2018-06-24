@@ -16,9 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json('*/*'));
 app.use('/', routes);
 
-
-
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log('Express server running on port', port)
+	console.log('Express server running on port', port);
 });
